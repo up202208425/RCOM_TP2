@@ -1,4 +1,4 @@
-#include "../include/download.h"
+#include "FTP.h"
 
 int parse(char *input, struct URL *url) {
 
