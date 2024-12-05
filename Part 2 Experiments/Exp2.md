@@ -16,3 +16,9 @@
 
 
 ## Questions
+
+### How to configure bridgeY0?
+
+
+
+### How many broadcast domains are there? How can you conclude it from the logs?
