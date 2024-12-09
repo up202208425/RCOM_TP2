@@ -3,7 +3,6 @@
 ## To-Do
 
 1. Connect and configure `E1` of `tuxY2`, and register its IP and MAC addresses.
-IP: `tux22` `72.16.21.1` MAC `00:e0:7d:b5:8c:8e`
 2. Create two bridges in the switch: `bridgeY0` and `bridgeY1`.  
 3. Remove the ports where `tuxY3`, `tuxY4`, and `tuxY2` are connected from the default bridge (`bridge`) and add them to the corresponding ports of `bridgeY0` and `bridgeY1`.  
 4. Start packet capture on `tuxY3.eth1`.  
@@ -15,6 +14,7 @@ IP: `tux22` `72.16.21.1` MAC `00:e0:7d:b5:8c:8e`
 10. Repeat steps 7, 8, and 9, but this time:  
     - Perform the broadcast ping in `tuxY2` (`ping -b 172.16.Y1.255`).  
 
+After configuring `E1` of `tux22`, the IP is `72.16.21.1` MAC `00:e0:7d:b5:8c:8e`
 
 ## Questions
 
