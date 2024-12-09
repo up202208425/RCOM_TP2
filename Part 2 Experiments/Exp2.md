@@ -2,7 +2,7 @@
 
 ## To-Do
 
-1. Connect and configure `E1` of `tuxY2`, and register its IP and MAC addresses.  
+1. Connect and configure `E1` of `tuxY2`, and register its IP and MAC addresses. #### `tux22` `72.16.21.1` MAC `00:e0:7d:b5:8c:8e`
 2. Create two bridges in the switch: `bridgeY0` and `bridgeY1`.  
 3. Remove the ports where `tuxY3`, `tuxY4`, and `tuxY2` are connected from the default bridge (`bridge`) and add them to the corresponding ports of `bridgeY0` and `bridgeY1`.  
 4. Start packet capture on `tuxY3.eth1`.  
