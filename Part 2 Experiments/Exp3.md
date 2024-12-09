@@ -9,7 +9,7 @@
 
 2. Observe MAC addresses and IP addresses in tuxY4.eth1 and tuxY4.eth2
 - in `tux24.eth1` IP `172.16.20.254` and MAC `00:01:02:a1:35:69`
-- in `tux24.eth2` IP `172.16.21.253` and MAC `00:c0:df:04:20:8c?
+- in `tux24.eth2` IP `172.16.21.253` and MAC `00:c0:df:04:20:8c`
 
 3. Reconfigure tuxY3 and tuxY2 so that each of them can reach the other
 4. Observe the routes available at the 3 tuxes (route -n)
