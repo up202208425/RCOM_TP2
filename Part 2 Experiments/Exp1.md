@@ -25,7 +25,7 @@ ARP packets are sent as broadcast messages, containing two IP addresses within t
 When the MAC address of the destination machine is unknown, the *ping* command generates ARP packets to resolve the address. Once resolved, the command generates ICMP (*Internet Control Message Protocol*) packets for echo requests and replies.
 
 ### What are the MAC and IP addresses of the ping packets?
-The IP addresses used in ICMP packets belong to the source and destination machines (`172.16.20.1` and MAC 00:c0:df:25:40:66 for tuxY23, and `172.16.20.254` and MAC 00:01:02:a1:35:69 for tuxY24). The MAC addresses correspond to the network interfaces of these machines and can be verified using the `arp -a` command or Wireshark captures.
+The IP addresses used in ICMP packets belong to the source and destination machines (`172.16.20.1` and MAC `00:c0:df:25:40:66` for tuxY23, and `172.16.20.254` and MAC `00:01:02:a1:35:69` for tuxY24). The MAC addresses correspond to the network interfaces of these machines and can be verified using the `arp -a` command or Wireshark captures.
 
 ### How to determine if a receiving Ethernet frame is ARP, IP, or ICMP?
 The protocol type of an Ethernet frame is visible in the "Protocol" column in Wireshark. Additionally, the Ethernet frame header includes protocol identifiers (e.g., `0x0806` for ARP, `0x0800` for IP).
