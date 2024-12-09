@@ -40,6 +40,9 @@ ping broadcast in tuxY2 (ping -b 172.16.Y1.255)
 
 ### How to configure bridgeY0?
 
+Bridge20 was configured to serve as a link between the computers Tux23 and Tux24, forming a subnet. We removed the default configurations and connections that the switch implemented when linking the computers and configured new ports/connections for each of the computers.
 
 
 ### How many broadcast domains are there? How can you conclude it from the logs?
+
+There are two broadcast domains because two bridges are implemented. Analyzing the logs, we can see that the ping from Tux23 received a reply from Tux24 but not from Tux22, as they are on two different bridges.
