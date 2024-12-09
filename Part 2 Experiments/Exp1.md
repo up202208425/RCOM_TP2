@@ -19,7 +19,7 @@
 ARP (*Address Resolution Protocol*) packets are used to map an IP address to its corresponding MAC address on a local network.
 
 ### What are the MAC and IP addresses of ARP packets, and why?
-ARP packets are sent as broadcast messages, containing two IP addresses within the same ARP packet: the source machine's IP (e.g., `172.16.20.1` for tuxY23) and the destination machine's IP (e.g., `172.16.20.254` for tuxY24). The destination MAC address in ARP requests is `FF:FF:FF:FF:FF:FF` (broadcast). Upon receiving the ARP request, the destination responds with its MAC address.
+ARP packets are sent as broadcast messages, containing two IP addresses within the same ARP packet: the source machine's IP and the destination machine's IP. The destination MAC address in ARP requests is `FF:FF:FF:FF:FF:FF` (broadcast). Upon receiving the ARP request, the destination responds with its MAC address.
 
 ### What packets does the ping command generate?
 When the MAC address of the destination machine is unknown, the *ping* command generates ARP packets to resolve the address. Once resolved, the command generates ICMP (*Internet Control Message Protocol*) packets for echo requests and replies.
