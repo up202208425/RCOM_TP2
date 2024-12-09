@@ -12,6 +12,9 @@
 - in `tux24.eth2` IP `172.16.21.253` and MAC `00:c0:df:04:20:8c`
 
 3. Reconfigure tuxY3 and tuxY2 so that each of them can reach the other
+- add command
+- add again
+
 4. Observe the routes available at the 3 tuxes (route -n)
 5. Start capture at tuxY3
 6. From tuxY3, ping the other network interfaces (172.16.Y0.254, 172.16.Y1.253,
