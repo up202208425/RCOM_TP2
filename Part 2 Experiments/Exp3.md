@@ -31,8 +31,8 @@
 
 ### What routes are there in the tuxes? What are their meaning?
 - No tux23 e no tux22, existem rotas que utilizam o tux24 como gateway, uma vez que este é configurado como router entre as duas redes.
-- No tux23, a rota para a rede do tux22 (172.16.21.0/24) utiliza o gateway `172.16.20.254` (interface do tux24 na bridge20).
-- No tux22, a rota para a rede do tux23 (172.16.Y0.0/24) utiliza o gateway `172.16.21.253` (interface do tux24 na bridge21).
+- No tux23, a rota para a rede do tux22 (`172.16.21.0/24`) utiliza o gateway `172.16.20.254` (interface do tux24 na bridge20).
+- No tux22, a rota para a rede do tux23 (`172.16.Y0.0/24`) utiliza o gateway `172.16.21.253` (interface do tux24 na bridge21).
 Isto significa que a ligação entre as redes passa obrigatoriamente pelo tux24.
 
 ### What information does an entry of the forwarding table contain?
