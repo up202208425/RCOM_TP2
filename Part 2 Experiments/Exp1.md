@@ -16,22 +16,36 @@
 ## Questions
 
 ### What are the ARP packets and what are they used for?
-ARP (*Address Resolution Protocol*) packets are used to map an IP address to its corresponding MAC address on a local network.
+ARP (*Address Resolution Protocol*) packets são usado para mapear um IP address ao seu MAC address correspondente numa rede local.
 
 ### What are the MAC and IP addresses of ARP packets, and why?
-ARP packets are sent as broadcast messages, containing two IP addresses within the same ARP packet: the source machine's IP and the destination machine's IP. The destination MAC address in ARP requests is `FF:FF:FF:FF:FF:FF` (broadcast). Upon receiving the ARP request, the destination responds with its MAC address.
+ARP packets são enviados em broadcast, contendo dois endereços IP addresses no mesmo ARP packet: o IP da máquina de origem e o endereço IP da máquina de destino. O endereço MAC em ARP requests é `FF:FF:FF:FF:FF:FF` (broadcast). Com a receção do ARP request, o destino responde com o seu endereço MAC.
 
 ### What packets does the ping command generate?
-When the MAC address of the destination machine is unknown, the *ping* command generates ARP packets to resolve the address. Once resolved, the command generates ICMP (*Internet Control Message Protocol*) packets for echo requests and replies.
+Enquanto não obtém o endereço MAC da máquina de destino, o comando `ping` gera ARP packets para encontrar o address. Após fazer a ligação do endereço IP ao respetivo MAC, o comando gera pacotes ICMP (*Internet Control Message Protocol*) para echo requests and replies.
 
 ### What are the MAC and IP addresses of the ping packets?
-The IP addresses used in ICMP packets belong to the source and destination machines (`172.16.20.1` and MAC `00:c0:df:25:40:66` for tux23, and `172.16.20.254` and MAC `00:01:02:a1:35:69` for tux24). The MAC addresses correspond to the network interfaces of these machines and can be verified using the `arp -a` command or Wireshark captures.
+Os endereços IP usados nos pacotes ICMP pertencem sempre à máquina de origem (`172.16.20.1` para o tux23) e à máquina de destino final (`172.16.20.254` para o tux24).
+
+Os endereços MAC variam dependendo da etapa do encaminhamento:
+
+- No primeiro salto (na rede de origem), o MAC de origem é o do tux23 (`00:c0:df:25:40:66`), e o MAC de destino é o do tux24 (gateway, `00:01:02:a1:35:69`).
+  
+- No último salto (na rede de destino), o MAC de origem é o do tux24 (interface na bridge de destino), e o MAC de destino é o do tux22.
 
 ### How to determine if a receiving Ethernet frame is ARP, IP, or ICMP?
-The protocol type of an Ethernet frame is visible in the "Protocol" column in Wireshark. Additionally, the Ethernet frame header includes protocol identifiers (e.g., `0x0806` for ARP, `0x0800` for IP).
+O tipo de protocolo de cada frame Ethernet pode ser identificado na coluna "Protocol" ao capturar pacotes com o Wireshark.
+
+Analisando a estrutura de um frame Ethernet:
+
+- Endereço MAC de destino: primeiros 6 bytes.
+- Endereço MAC de origem: seguintes 6 bytes.
+- EtherType: últimos 2 bytes do cabeçalho Ethernet, que indicam o protocolo encapsulado: `0x0806`: ARP, `0x0800`: IP.
+
+Para frames IP, o campo Protocol no cabeçalho IP indica o tipo de payload: `1`: ICMP.
 
 ### How to determine the length of a receiving frame?
-Wireshark displays the length of each captured frame in its "Length" column. This information is also present in the frame header.
+O Wireshark apresenta o tamanho de cada frame capturada na coluna "Length", em bytes.
 
 ### What is the loopback interface, and why is it important?
-The loopback interface (`127.0.0.1`) is a virtual interface used for testing and diagnostics. It ensures that networking software operates correctly even without an active external connection, allowing developers to verify configurations and functionality locally.
+O loopback é uma interface virtual que é sempre alcançável desde que pelo menos uma das interfaces IP do `switch` esteja operacional. Com isto, é possível verificar periodicamente se as ligações da rede estão configuradas corretamente.
