@@ -10,28 +10,12 @@ After configuring `E1` of `tux22`, the IP is `72.16.21.1` MAC `00:e0:7d:b5:8c:8e
 3. Remove the ports where `tuxY3`, `tuxY4`, and `tuxY2` are connected from the default bridge (`bridge`) and add them to the corresponding ports of `bridgeY0` and `bridgeY1`.  
 4. Start packet capture on `tuxY3.eth1`.  
 5. In `tuxY3`, ping `tuxY4` and then ping `tuxY2`.
-
-Capture at tux23.eth1 to tux24.eth1
-print
-Capture at tux23.eth1 to tux22.eth1
-print
-
-  
 6. Stop the capture and save the log.  
 7. Start new packet captures on `tuxY2.eth1`, `tuxY3.eth1`, and `tuxY4.eth1`.  
-
-
-uxY2.eth1, tuxY3.eth1, tuxY4.eth1
-print
-print 
-print
-
-
 8. In `tuxY3`, perform a broadcast ping (`ping -b 172.16.Y0.255`) for a few seconds.  
 9. Observe the results, stop the captures, and save the logs.  
 10. Repeat steps 7, 8, and 9, but this time:  
     - Perform the broadcast ping in `tuxY2` (`ping -b 172.16.Y1.255`).  
-
 
 ping broadcast in tuxY2 (ping -b 172.16.Y1.255)
 
