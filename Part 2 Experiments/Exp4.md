@@ -14,8 +14,8 @@
 
 4. In tuxY2
 – Do the following:
-sysctl net.ipv4.conf.eth1.accept_redirects=0
-sysctl net.ipv4.conf.all.accept_redirects=0
+  - sysctl net.ipv4.conf.eth1.accept_redirects=0
+  - sysctl net.ipv4.conf.all.accept_redirects=0
 – In tuxY2, change the routes to use RC as the gateway to subnet 172.16.Y0.0/24 instead of tuxY4
 – In tuxY2, ping tuxY3
 – Using capture at tuxY2, try to understand the path followed by ICMP ECHO and ECHO-REPLY packets (look at MAC addresses)
@@ -33,17 +33,16 @@ sysctl net.ipv4.conf.all.accept_redirects=0
 ## Questions
 
 ### How to configure a static route in a commercial router?
-
+Começamos por resetar as suas configurações, adicioná-lo à rede interna (à bridge correspondente) e atribuir um IP interno e um IP externo.
 
 ### What are the paths followed by the packets, with and without ICMP redirect enabled, in the experiments carried out and why?
-
-
+Na primeira experiência, sem a ligação do tux22 ao tux24, os pacotes de dados foram reencaminhados (ICMP redirect) através do router implementado até ao endereço IP de destino.
+Já na segunda experiência não houve qualquer reencaminhamento pois a ligação mais curta da rede estava disponível.
 
 ### How to configure NAT in a commercial router?
-
+Com o comando `/ip firewall nat enable 0` no terminal do router.
 
 ### What does NAT do?
-
-
+O NAT (Network Address Translation) traduz endereços da rede local para um único endereço público, e viceversa. Assim, quando um pacote é enviado para uma rede externa, é enviado com o endereço publico como origem. Quando o computador de destino responde, envia a resposta para esse endereço público, que é depois traduzido de volta para o endereço local de destino que enviou o pacote em primeiro lugar. Deste modo, é possivel reduzir o numero de endereços publicos utilizados.
 
 ### What happens when tuxY3 pings the FTP server with the NAT disabled? Why?
