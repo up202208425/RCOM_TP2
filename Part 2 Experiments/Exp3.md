@@ -8,14 +8,14 @@
 – Disable ICMP echo-ignore-broadcast
 
 2. Observe MAC addresses and IP addresses in tuxY4.eth1 and tuxY4.eth2
-- no `tux24.eth1` IP `172.16.20.254` e o endereço MAC `00:01:02:a1:35:69`
-- no `tux24.eth2` IP `172.16.21.253` e o endereço MAC `00:c0:df:04:20:8c`
+- no tux24.eth1 IP `172.16.20.254` e o endereço MAC `00:01:02:a1:35:69`
+- no tux24.eth2 IP `172.16.21.253` e o endereço MAC `00:c0:df:04:20:8c`
 
 3. Reconfigure tuxY3 and tuxY2 so that each of them can reach the other
-- no `tux23`, comando `route add -net 172.16.Y1.0/24 gw 172.16.20.254`
-- no `tux24`, comando `route add -net 172.16.Y0.0/24 gw 172.16.21.253`
+- no tux23, comando `route add -net 172.16.Y1.0/24 gw 172.16.20.254`
+- no tux24, comando `route add -net 172.16.Y0.0/24 gw 172.16.21.253`
 - confirmamos a reconfiguração com `route -n`
-- nós usamos o comando `ping` no `tuxY3` e no `tux24`para veriicar a conectividade com o `tux22`
+- nós usamos o comando `ping` no tuxY3 e no tux24 para veriicar a conectividade com o tux22.
 
 4. Observe the routes available at the 3 tuxes (route -n)
 5. Start capture at tuxY3
@@ -31,8 +31,8 @@
 
 ### What routes are there in the tuxes? What are their meaning?
 - No tux23 e no tux22, existem rotas que utilizam o tux24 como gateway, uma vez que este é configurado como router entre as duas redes.
-- No tux23, a rota para a rede do tux22 (172.16.21.0/24) utiliza o gateway 172.16.20.254 (interface do tux24 na bridge20).
-- No tux22, a rota para a rede do tux23 (172.16.Y0.0/24) utiliza o gateway 172.16.21.253 (interface do tux24 na bridge21).
+- No tux23, a rota para a rede do tux22 (172.16.21.0/24) utiliza o gateway `172.16.20.254` (interface do tux24 na bridge20).
+- No tux22, a rota para a rede do tux23 (172.16.Y0.0/24) utiliza o gateway `172.16.21.253` (interface do tux24 na bridge21).
 Isto significa que a ligação entre as redes passa obrigatoriamente pelo tux24.
 
 ### What information does an entry of the forwarding table contain?
@@ -67,4 +67,4 @@ Quando fazemos o comando `ping`, acontece o seguinte:
 
 ### What are the IP and MAC addresses associated to ICMP packets and why? 
 
-Cada pacote ICMP observado através do `ping` no `tux23` contém como endereço de origem o IP do `tux23` (tux que iniciou o `ping`) e o endereço de destino o IP do `tux22`. No entanto, esses pacotes contém o endereço MAC do `tux24`, pois é este tux que faz a ligação entre as duas bridges. Isso ocorre porque o `tux24` funciona como router.
+Cada pacote ICMP observado através do `ping` no tux23 contém como endereço de origem o IP do tux23 (tux que iniciou o `ping`) e o endereço de destino o IP do tux22. No entanto, esses pacotes contém o endereço MAC do tux24, pois é este tux que faz a ligação entre as duas bridges. Isso ocorre porque o tux24 funciona como router.
