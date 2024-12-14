@@ -38,9 +38,19 @@ Começamos por resetar as suas configurações, adicioná-lo à rede interna (à
 ### What are the paths followed by the packets, with and without ICMP redirect enabled, in the experiments carried out and why?
 Na primeira experiência, sem a ligação do tux22 ao tux24, os pacotes de dados foram reencaminhados (ICMP redirect) através do router implementado até ao endereço IP de destino.
 Já na segunda experiência não houve qualquer reencaminhamento pois a ligação mais curta da rede estava disponível.
+VER LOGS MAIS TARDE
+
+Em suma:
+
+- Sem ICMP Redirect: o router encaminha os pacotes para o gateway configurado, mesmo que o caminho seja maior. Ou seja, os pacotes vão passar por caminhos intermediários, mesmo que haja uma rota mais direta.
+
+- Com ICMP Redirect: o router pode enviar um "redirect" para o dispositivo de origem, sugerindo que use um caminho mais direto (como um gateway mais próximo). Isso melhora a eficiência, evitando a necessidade de passar por um router intermediário quando o caminho direto está disponível.
 
 ### How to configure NAT in a commercial router?
-Com o comando `/ip firewall nat enable 0` no terminal do router.
+Tal como proposto do guião, desativamos o NAT com o comando `/ip firewall nat disable 0` no terminal do router. Vimos que sem o NAT não obtivemos replies. De seguida, fizemos o comando `/ip firewall nat enable 0` no terminal do router e ao fazer um ping para fora, a resposta é recebida corretamente.
+
+Enable: `/ip firewall nat enable 0´
+Disable: `/ip firewall nat disable 0´
 
 ### What does NAT do?
 O NAT (Network Address Translation) traduz endereços da rede local para um único endereço público, e viceversa. Assim, quando um pacote é enviado para uma rede externa, é enviado com o endereço publico como origem. Quando o computador de destino responde, envia a resposta para esse endereço público, que é depois traduzido de volta para o endereço local de destino que enviou o pacote em primeiro lugar. Deste modo, é possivel reduzir o numero de endereços publicos utilizados.
