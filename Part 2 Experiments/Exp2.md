@@ -4,7 +4,7 @@
 
 1. Connect and configure `E1` of `tuxY2`, and register its IP and MAC addresses.
 
-After configuring `E1` of `tux22`, the IP is `72.16.21.1` MAC `00:e0:7d:b5:8c:8e`
+Depois de configurar o `E1` do `tux22`, o endereço IP é `72.16.21.1` e o endereço MAC é `00:e0:7d:b5:8c:8e`
 
 2. Create two bridges in the switch: `bridgeY0` and `bridgeY1`.  
 3. Remove the ports where `tuxY3`, `tuxY4`, and `tuxY2` are connected from the default bridge (`bridge`) and add them to the corresponding ports of `bridgeY0` and `bridgeY1`.  
@@ -23,10 +23,7 @@ ping broadcast in tuxY2 (ping -b 172.16.Y1.255)
 ## Questions
 
 ### How to configure bridgeY0?
-
-Bridge20 was configured to serve as a link between the computers Tux23 and Tux24, forming a subnet. We removed the default configurations and connections that the switch implemented when linking the computers and configured new ports/connections for each of the computers.
-
+A bridge20 foi configurada para servir de meio de ligação entre os computadores tux23 e tux24, formando uma subrede. Eliminamos as configurações e ligações por omissão que o switch implementou aquando da ligação entre os computadores e configuramos novas portas/ligações a cada um dos computadores.
 
 ### How many broadcast domains are there? How can you conclude it from the logs?
-
-There are two broadcast domains because two bridges are implemented. Analyzing the logs, we can see that the ping from Tux23 received a reply from Tux24 but not from Tux22, as they are on two different bridges.
+Existem dois broadcast domains pois existem duas bridges implementadas. Analisando os logs, reparamos que o ping do tux23 conseguiu resposta do tux24 mas não do tux22, pois estão inseridos em duas bridges diferentes.
