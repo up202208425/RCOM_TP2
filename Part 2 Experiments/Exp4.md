@@ -49,10 +49,14 @@ Em suma:
 ### How to configure NAT in a commercial router?
 Tal como proposto do guião, desativamos o NAT com o comando `/ip firewall nat disable 0` no terminal do router. Vimos que sem o NAT não obtivemos replies. De seguida, fizemos o comando `/ip firewall nat enable 0` no terminal do router e ao fazer um ping para fora, a resposta é recebida corretamente.
 
-Enable: `/ip firewall nat enable 0´
-Disable: `/ip firewall nat disable 0´
+- Enable: `/ip firewall nat enable 0´
+- Disable: `/ip firewall nat disable 0´
 
 ### What does NAT do?
 O NAT (Network Address Translation) traduz endereços da rede local para um único endereço público, e viceversa. Assim, quando um pacote é enviado para uma rede externa, é enviado com o endereço publico como origem. Quando o computador de destino responde, envia a resposta para esse endereço público, que é depois traduzido de volta para o endereço local de destino que enviou o pacote em primeiro lugar. Deste modo, é possivel reduzir o numero de endereços publicos utilizados.
 
 ### What happens when tuxY3 pings the FTP server with the NAT disabled? Why?
+Quando o tux23 tenta fazer ping ao servidor FTP (172.16.1.10) com o NAT desativado, o pedido de ping irá falhar.
+Sem o NAT, o servidor FTP depende da routing table para determinar como devolver a resposta ICMP ao tux23.
+Caso o servidor FTP ou os routers intermédios não tenham uma rota para a sub-rede do tux23, a resposta não será entregue.
+Resumidamente, o tux23 consegue enviar o pedido ICMP ao servidor FTP. O servidor FTP pode gerar uma resposta ICMP, mas esta falha em chegar ao tux23 porque o servidor não consegue encaminhar o pacote de volta sem um IP traduzido pelo NAT.
