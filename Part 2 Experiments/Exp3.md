@@ -58,7 +58,7 @@ Portanto, o ARP ocorre apenas entre o remetente (tux23) e o seu gateway (tux24).
 
 ### What ICMP packets are observed and why?
 
-Os pacotes ICMP observados são do tipo Echo Request e Echo Reply, gerados pelo comando `ping`.
+Os pacotes ICMP observados são do tipo Echo Request e Echo Reply, gerados pelo comando `ping` ou `traceroute`.
 
 Quando fazemos o comando `ping`, acontece o seguinte:
 - O Echo Request é enviado do tux23 para o tux22, solicitando uma resposta.
