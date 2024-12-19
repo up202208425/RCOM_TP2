@@ -17,7 +17,7 @@
 
 – Use the Wireshark statistics tools to understand how the throughput of a TCP connection varies along the time
 
-#### Devido à velocidade com que os ficheiros passavam de um tux para o outro, não fomos capazes de simular a colisão a meio de uma tranferência tal como proposto no passo nº5.
+#### Devido à velocidade com que os ficheiros passavam de um tux para o outro, não fomos capazes de simular a colisão a meio de uma tranferência tal como proposto no passo nº5 com um ficheiro pequeno. Testamos, porteriormente, com um ficheiro `ftp://rcom:rcom@ftp.netlab.fe.up.pt/ubunto.iso` e pudemos, finalmente, tirar conclusões.
 
 ## Questions
 
