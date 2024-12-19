@@ -13,6 +13,7 @@
 9. Stop capturing packets.  
 10. Save the log and study it at home.  
 
+
 ## Questions
 
 ### What are the ARP packets and what are they used for?
