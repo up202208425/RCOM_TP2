@@ -24,7 +24,7 @@
 7. Stop the capture and save the logs
 8. Start capture in tuxY4; use 2 instances of Wireshark, one per network interface
 9. Clean the ARP tables in the 3 tuxes
-10. In tuxY3, ping tuxY2 for a few seconds.
+10. In tuxY3, ping tuxY2 for a few seconds
 11. Stop captures in tuxY4 and save logs
 
 ## Questions
