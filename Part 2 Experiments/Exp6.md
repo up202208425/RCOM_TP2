@@ -7,15 +7,15 @@
 3. Verify if file has arrived correctly, stop capturing and save the log
 4. Using Wireshark, observe packets exchanged including:
 
-&rarr TCP control and data connections, and its phases (establishment, data, termination)
-&rarr Data transferred through the FTP control connection
-&rarr TCP ARQ mechanism
-&rarr TCP congestion control mechanism in action
-&rarr Note: use also the Wireshark Statistics tools (menu) to study the TCP phases, ARQ and congestion control mechanism
+* TCP control and data connections, and its phases (establishment, data, termination)
+* Data transferred through the FTP control connection
+* TCP ARQ mechanism
+* TCP congestion control mechanism in action
+* Note: use also the Wireshark Statistics tools (menu) to study the TCP phases, ARQ and congestion control mechanism
 
 5. Repeat the download in tuxY3 but now, in the middle of the transfer, start a new download in tuxY2
 
-&rarr Use the Wireshark statistics tools to understand how the throughput of a TCP connection varies along the time
+* Use the Wireshark statistics tools to understand how the throughput of a TCP connection varies along the time
 
 #### Devido à velocidade com que os ficheiros passavam de um tux para o outro, não fomos capazes de simular a colisão a meio de uma tranferência tal como proposto no passo nº5 com um ficheiro pequeno. Testamos, porteriormente, com um ficheiro `ftp://rcom:rcom@ftp.netlab.fe.up.pt/ubunto.iso` e pudemos, finalmente, tirar conclusões.
 
