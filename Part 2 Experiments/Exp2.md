@@ -4,7 +4,7 @@
 
 1. Connect and configure `E1` of `tuxY2`, and register its IP and MAC addresses.
 
-Depois de configurar o `E1` do `tux22`, o endereço IP é `172.16.21.1` e o endereço MAC é `00:e0:7d:b5:8c:8e`
+- Depois de configurar o `E1` do `tux22`, o endereço IP é `172.16.21.1` e o endereço MAC é `00:e0:7d:b5:8c:8e`
 
 2. Create two bridges in the switch: `bridgeY0` and `bridgeY1`.  
 3. Remove the ports where `tuxY3`, `tuxY4`, and `tuxY2` are connected from the default bridge (`bridge`) and add them to the corresponding ports of `bridgeY0` and `bridgeY1`.  
@@ -14,10 +14,8 @@ Depois de configurar o `E1` do `tux22`, o endereço IP é `172.16.21.1` e o ende
 7. Start new packet captures on `tuxY2.eth1`, `tuxY3.eth1`, and `tuxY4.eth1`.  
 8. In `tuxY3`, perform a broadcast ping (`ping -b 172.16.Y0.255`) for a few seconds.  
 9. Observe the results, stop the captures, and save the logs.  
-10. Repeat steps 7, 8, and 9, but this time:  
-    - Perform the broadcast ping in `tuxY2` (`ping -b 172.16.Y1.255`).  
-
-ping broadcast in tuxY2 (ping -b 172.16.Y1.255)
+10. Repeat steps 7, 8 and 9, but now do
+➢ ping broadcast in tuxY2 (ping -b 172.16.Y1.255)
 
 
 ## Questions
