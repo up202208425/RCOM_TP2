@@ -13,7 +13,6 @@
 9. Stop capturing packets.  
 10. Save the log and study it at home.  
 
-
 ## Questions
 
 ### What are the ARP packets and what are they used for?
@@ -42,7 +41,6 @@ Analisando a estrutura de um frame Ethernet:
 - Endereço MAC de destino: primeiros 6 bytes.
 - Endereço MAC de origem: seguintes 6 bytes.
 - EtherType: últimos 2 bytes do cabeçalho Ethernet, que indicam o protocolo encapsulado: `0x0806`: ARP, `0x0800`: IP.
-
 Para frames IP, o campo Protocol no cabeçalho IP indica o tipo de payload: `1`: ICMP.
 
 ### How to determine the length of a receiving frame?
