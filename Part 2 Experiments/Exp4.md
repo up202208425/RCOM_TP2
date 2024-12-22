@@ -28,7 +28,7 @@
 
 6. Disable NAT functionality in router RC
 
-7. In tuxY3 ping 1
+7. In tuxY3 ping 172.16.1.10, verify if there is connectivity, and try to understand what happens
 
 ## Questions
 
@@ -38,7 +38,6 @@ Começamos por resetar as suas configurações, adicioná-lo à rede interna (à
 ### What are the paths followed by the packets, with and without ICMP redirect enabled, in the experiments carried out and why?
 Na primeira experiência, sem a ligação do tux22 ao tux24, os pacotes de dados foram reencaminhados (ICMP redirect) através do router implementado até ao endereço IP de destino.
 Já na segunda experiência não houve qualquer reencaminhamento pois a ligação mais curta da rede estava disponível.
-VER LOGS MAIS TARDE
 
 Em suma:
 
