@@ -22,7 +22,7 @@
 ## Questions
 
 ### How many TCP connections are opened by your FTP application?
-Duas conexões TCP:
+São duas conexões TCP, cujas funções são as seguintes:
 
 - Conexão de controlo: usada para enviar comandos e receber respostas do servidor.
 - Conexão de dados: usada para transferir o ficheiro.
@@ -61,7 +61,6 @@ Observações nos logs:
 
 - NOTA: Uma rede diz-se congestionada a partir do momento que se perdem pacotes.
 
-
 ### How does the TCP congestion control mechanism work? What are the relevant fields. How did the throughput of the data connection evolve along the time? Is it according to the TCP congestion control mechanism?
 Cada emissor determina a capacidade da comunicação para poder enviar mais ou menos pacotes. Para isso há um parâmetro na conexão chamado CongestionWindow.
 
@@ -79,7 +78,6 @@ Campos relevantes no TCP:
 
 - Congestion Window (CWND): controla o número de pacotes que podem ser enviados. 
 - Threshold: define o limite entre Slow Start e Congestion Avoidance.
-
 
 ### Is the throughput of a TCP data connections disturbed by the appearance of a second TCP connection? How?
 Sim, ao fazer mais de uma conexão TCP a largura de banda será dividida entre as multiplas ligações, reduzindo a velocidade de cada uma; isto porque cada conexão adapta o seu CWND com base no congestionamento.
